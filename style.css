@@ -1,3 +1,104 @@
-.image{
-    src: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe8A3pwMn4eiYnUqi3A3ViTYfHNJwChs_oSIgEZ2KJtQ&s=10
+/* Shared portfolio styles */
+body {
+  background: #f6f3ff;
+  color: #28233d;
+}
+
+.hero {
+  background: linear-gradient(120deg, #6f42c1, #b06cff);
+  color: #fff;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
+.card {
+  border: 0;
+  box-shadow: 0 8px 24px #6f42c122;
+}
+
+.gym,
+.tech-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #fff;
+}
+
+img:hover {
+  animation: wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+  0%, 80%, 100% { transform: rotate(0deg); }
+  85% { transform: rotate(5deg); }
+  95% { transform: rotate(-5deg); }
+}
+
+/* Friends photo parallax */
+.friends-parallax {
+  position: relative;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  text-align: center;
+  background-image: linear-gradient(rgba(24, 17, 43, .48), rgba(24, 17, 43, .58)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMPWGjZWlm1a8tHtabDt3N8ZU-F59ikic8kPCho5_1Ew&s");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.friends-parallax-content {
+  max-width: 700px;
+  padding: 5rem 1.5rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .7);
+}
+
+.friends-parallax h2 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+}
+
+@media (max-width: 767.98px), (prefers-reduced-motion: reduce) {
+  .friends-parallax {
+    background-attachment: scroll;
+  }
+}
+
+
+/* Make the parallax motion easy to see: the section scrolls over its fixed photo. */
+.friends-parallax {
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.friends-parallax-content {
+  width: min(90%, 680px);
+  padding: 2.5rem 3rem;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 1.25rem;
+  background: rgba(24, 17, 43, .72);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 767.98px), (prefers-reduced-motion: reduce) {
+  .friends-parallax {
+    min-height: 75vh;
+    background-attachment: scroll;
+  }
+  .friends-parallax-content {
+    padding: 2rem 1.5rem;
+  }
 }
